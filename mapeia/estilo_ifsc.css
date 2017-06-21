@@ -74,8 +74,8 @@
   margin-bottom: 20px;
 }
 
-.femeafilhote label {  background-image: url(imgs/femea_filhote.jpg);}
-.femea label {  background-image: url(imgs/femea.jpg);}
+.femeafilhote label {  background-image: url(http://baleia.info/mapeia/imgs/femea_filhote.jpg);}
+.femea label {  background-image: url(http://baleia.info/mapeia/imgs/femea.jpg);}
 
 
 .whales input:focus + label {
