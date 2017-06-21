@@ -1,0 +1,106 @@
+.myButton {
+	background-color:#44c767;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Trebuchet MS;
+	font-size:28px;
+	padding:27px 30px;
+	text-decoration:none;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}.whales {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.error-message, .required-message, .ss-required-asterisk {
+  font-family: "Roboto";
+  color: rgb(196,59,29);
+  font-weight: 400;
+  font-size: 1.000rem;
+  font-style: normal;
+}
+.whales:after {
+  content: "";
+  clear: both;
+}
+
+.whale {
+  border: 0px solid #ccc;
+  box-sizing: border-box;
+  height:167px;
+  position: relative;
+  width:200px;
+  display: inline-block;
+}
+
+.relato {
+  border: 4px solid #006699;
+  box-sizing: border-box;
+  height: 300px;
+  position: relative;
+  width: 70%;
+  alignment-adjust:after-edge;
+  font-family:Verdana, Geneva, sans-serif;
+  font-size:16px
+  margin-top: 40px;
+  
+
+}
+.whale label {
+  background: #fff no-repeat center center;
+  bottom: 1px;
+  cursor: pointer;
+  display: block;
+  font-size: 0;
+  left: 1px;
+  position: absolute;
+  right: 1px;
+  text-indent: 100%;
+  top: 1px;
+  white-space: nowrap;
+}
+
+.whale + .whale {
+  margin-left: 20px;
+  margin-right: 0px;
+  margin-bottom: 20px;
+}
+
+.femeafilhote label {  background-image: url(imgs/femea_filhote.jpg);}
+.femea label {  background-image: url(imgs/femea.jpg);}
+
+
+.whales input:focus + label {
+  outline: 2px dotted #006699;
+}
+
+.whales input:checked + label {
+  outline: 4px solid #006699;
+}
+
+.whales input:checked + label:after {
+  background: url(imgs/checked.png);
+  bottom: -10px;
+  content: "";
+  display: inline-block;
+  height: 80px;
+  position: absolute;
+  right: -10px;
+  width: 80px;
+}
+
+@-moz-document url-prefix() {
+  .whales input:checked + label:after {
+    bottom: 0;
+    right: 0;
+    background-color: #006699;
+  }
+}
