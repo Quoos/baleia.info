@@ -87,7 +87,7 @@
 }
 
 .whales input:checked + label:after {
-  background: url(imgs/checked.png);
+  background: url(http://baleia.info/mapeia/imgs/checked.png);
   bottom: -10px;
   content: "";
   display: inline-block;
