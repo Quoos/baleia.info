@@ -53,13 +53,12 @@ Longitude: <span id="longitude">..</span>
 function registerverificageo() {
 	showlocation();
 	toggle_visibility('foo');
-	getLocation();
 }
 </script>
 
 <SCRIPT>
 function showlocation(){
-	navigator.geolocation.watchPosition(callback);
+	navigator.geolocation.getCurrentPosition(callback);
 }
 function callback(position){
 	document.getElementById('latitude').innerHTML=position.coords.latitude;
@@ -108,25 +107,5 @@ function callback(position){
   <div id="base">
     <p><img src="mapeia/imgs/garopaba_laboratorio_meio_ambiente_geomatica.jpg" alt="Laboratório de Meio Ambiente e Geomática"></p>
   </div>
-</div><button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-    x.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
 </body>
 </html>
