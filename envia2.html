@@ -31,6 +31,8 @@ body {
   <div id="topo"> Mapeador de avistagem de baleia franca na APABF - Área de Proteção Ambiental da Baleia Franca  </div>
   <div id="meio">  1) Clique no botão obter coordenada, para consultar o GPS do seu smartphone e receber as coordenadas desse local.
     <p>    <input class="myButton" type="button" value="Obter Coordenada" onClick="registerverificageo()" />
+	    
+	  	    
   </p>
   <p><br />
 Latitude: <span id="latitude">..</span>
@@ -51,6 +53,7 @@ Longitude: <span id="longitude">..</span>
 function registerverificageo() {
 	showlocation();
 	toggle_visibility('foo');
+	getLocation();
 }
 </script>
 
