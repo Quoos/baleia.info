@@ -1,0 +1,110 @@
+﻿
+<!doctype html>
+<!--[if lt IE 7]> <html class="ie6 oldie"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Obter Coordenada / Marcar tipo de avistagem / Registrar avistagem</title>
+<link href="mapeia/boilerplate.css" rel="stylesheet" type="text/css">
+<link href="mapeia/ifsc_baleia.css" rel="stylesheet" type="text/css">
+<link href="mapeia/estilo_ifsc.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+body {
+	background-image: url(mapeia/imgs/quoos_fundo.jpg);
+	background-repeat: no-repeat;
+	background-position: center center;
+
+}
+	.oculto { display: none; }
+	.ocultogeo { display: none; }
+</style>
+<script src="mapeia/respond.min.js"></script>
+</head>
+<body>
+<div class="gridContainer clearfix">
+  <div id="topo"> Mapeador de avistagem de baleia franca na APABF - Área de Proteção Ambiental da Baleia Franca  </div>
+  <div id="meio">  1) Clique no botão obter coordenada, para consultar o GPS do seu smartphone e receber as coordenadas desse local.
+    <p>    <input class="myButton" type="button" value="Obter Coordenada" onClick="registerverificageo()" />
+  </p>
+  <p><br />
+Latitude: <span id="latitude">..</span>
+Longitude: <span id="longitude">..</span>
+<script type="text/javascript">
+<!--
+    function toggle_visibility(id) {
+       var e = document.getElementById(id);
+       if(e.style.display == 'block')
+          e.style.display = 'block';
+       else
+          e.style.display = 'block';
+    }
+//-->
+</script>
+
+<script type="text/javascript">
+function registerverificageo() {
+	showlocation();
+	toggle_visibility('foo');
+}
+</script>
+
+<SCRIPT>
+function showlocation(){
+	navigator.geolocation.watchPosition(callback);
+}
+function callback(position){
+	document.getElementById('latitude').innerHTML=position.coords.latitude;
+	document.getElementById('longitude').innerHTML=position.coords.longitude;
+	document.getElementById('latitudes').value=position.coords.latitude;
+	document.getElementById('longitudes').value=position.coords.longitude;
+	document.getElementById("latelongs").value=position.coords.longitude+ " "+position.coords.latitude;
+}
+</SCRIPT><center>
+<form action="http://baleia.info/geolocaliza.php" method="post"
+>
+
+
+<center>
+<div id="foos" class="ocultogeo">
+<input type="text" name="longitude" min="-49.249910" max="-48.388457" value="" id="longitudes" required title="" />
+<input type="text" name="latitude" min="-28.849389" max="-27.764206" value="" id="latitudes" required title="" />
+<input type="text" name="latelong" value="" id="latelongs" required title="" />
+
+</div>
+
+<div id="foo" class="oculto">
+<p style="font-size: 30px">2° - Indique qual foi o tipo de avistagem:</p>
+<center>
+<ul class="whales"><li class="whale femea"><input id="141001547-5" type="radio" name="avistagemon" value="Adulto(s)" id="avistagemon" required title="">
+<label for="141001547-5">Adulto(s)</label> </li>
+
+<li class="whale femeafilhote"><input value="Adulto(s) e filhote(s)" id="141003219-1" type="radio" name="avistagemon" class="ss-q-short" id="avistagemon"><label for="141003219-1">Adulto(s) e filhote(s)</label> 
+  </li>
+
+
+  <input type="hidden" name="draftResponse" value="[,,&quot;-45258000228270956&quot;]
+" />
+
+<input type="hidden" name="draftResponse" value="[,,&quot;-45258000228270956&quot;]">
+<input type="hidden" name="pageHistory" value="0">
+<input type="hidden" name="fbzx" value="-45258000228270956"><center>
+<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td align="center">&nbsp;</td>
+  </tr>
+</table><input class="myButton" value="3° - Enviar!" id="ss-submit" type="submit" name="submit"></center></p></div>
+
+</form></p>
+  </div>
+  <div id="base">
+    <p><img src="http://baleia.info/mapeia/imgs/garopaba_laboratorio_meio_ambiente_geomatica.jpg" alt="Laboratório de Meio Ambiente e Geomática"></p>
+  </div>
+</div>
+</body>
+</html>
